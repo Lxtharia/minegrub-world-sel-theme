@@ -21,9 +21,10 @@ terminal-font: "Monocraft Regular 22"
 
 	item_font = "Minecraft Regular 30"
 	item_color = "#ffffff"
-	# item_height = 96
-	# item_spacing = 12
     item_padding = 5
+    # height+spacing should equals 108
+    # Info: pixmaps are drawn in spacing, which may fuck with where the text is drawn
+    # That's why i have empty pixmaps in left/top
     item_height = 96
     item_spacing = 12
 
@@ -31,7 +32,7 @@ terminal-font: "Monocraft Regular 22"
 
     icon_width = 801
     icon_height = 96
-    item_icon_space = 20
+    item_icon_space = 1000  # Temp fix, draw with empty font instead
 
 	scrollbar = true
 }
@@ -45,8 +46,9 @@ terminal-font: "Monocraft Regular 22"
 	item_font = "Minecraft Regular 30"
 	item_color = "#ffffff"
     item_padding = 5
-    item_height = 24
-    item_spacing = 84
+    # height+spacing+pixmaps should equals 108
+    item_height = 27
+    item_spacing = 81
 
 	item_pixmap_style = "item_*.png"
 	selected_item_pixmap_style = "selected_item_*.png"

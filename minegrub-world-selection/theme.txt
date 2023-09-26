@@ -1,0 +1,67 @@
+# Global
+
+title-text: ""
+desktop-image: "background.png"
+
+# Terminal for Console and Options
+terminal-border: "20"
+terminal-left: "10%"
+terminal-top: "10%+23"
+terminal-width: "80%"
+terminal-height: "80%"
+terminal-box: "term_*.png"
+terminal-font: "Monocraft Regular 22"
+
+
++ boot_menu {
+	left = 50%-399
+	top = 102
+	width = 798
+	height = 100%-192
+
+	item_font = "Minecraft Regular 30"
+	item_color = "#ffffff"
+	item_height = 96
+	item_padding = 0
+	item_spacing = 12
+#	item_pixmap_style = "item_*.png"
+#	selected_item_pixmap_style = "selected_item_*.png"
+
+    icon_width = 96
+    icon_height = 96
+    item_icon_space = 9
+	scrollbar = true
+}
+
+
+# TEXT 
++ label {
+	id = "__timeout__"
+	
+	left = 50%
+	top = 100%-31
+	height = 24
+	width = 50%-6	
+	
+	text = "Joining world in %d seconds"
+	align = "right"
+	font = "Minecraft Regular 30"
+	color = "white"
+}
+
+# SHADOW 
++ label {
+	id = "__timeout__"
+
+	left = 50%+3
+	top = 100%-28
+	height = 24
+	width = 50%-6
+
+	text = "Joining world in %d seconds"
+	align = "right"
+	font = "Minecraft Regular 30"
+	color = "#3f3f3f"
+}
+
+

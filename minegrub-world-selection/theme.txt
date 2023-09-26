@@ -15,24 +15,42 @@ terminal-font: "Monocraft Regular 22"
 
 + boot_menu {
 	left = 50%-399
-	top = 100
+	top = 10%
 	width = 798
-	height = 100%-192
+	height = 82%
 
 	item_font = "Minecraft Regular 30"
 	item_color = "#ffffff"
 	# item_height = 96
 	# item_spacing = 12
-    item_padding = 15
+    item_padding = 5
+    item_height = 96
+    item_spacing = 12
+
+    item_pixmap_style = "L2_item_*.png"
+
+    icon_width = 801
+    icon_height = 96
+    item_icon_space = 20
+
+	scrollbar = true
+}
+
++ boot_menu {
+	left = 50%-399
+	top = 10%
+	width = 798
+	height = 82%
+
+	item_font = "Minecraft Regular 30"
+	item_color = "#ffffff"
+    item_padding = 5
     item_height = 24
     item_spacing = 84
 
 	item_pixmap_style = "item_*.png"
 	selected_item_pixmap_style = "selected_item_*.png"
 
-#    icon_width = 96
-#    icon_height = 96
-#    item_icon_space = 9
     icon_width  = 0
     item_icon_space = 7
 	scrollbar = true

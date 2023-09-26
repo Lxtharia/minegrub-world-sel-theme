@@ -25,7 +25,7 @@ terminal-font: "Monocraft Regular 22"
 	item_padding = 0
 	item_spacing = 12
 #	item_pixmap_style = "item_*.png"
-#	selected_item_pixmap_style = "selected_item_*.png"
+	selected_item_pixmap_style = "selected_item_*.png"
 
     icon_width = 96
     icon_height = 96

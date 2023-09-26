@@ -47,14 +47,15 @@ terminal-font: "Monocraft Regular 22"
 	item_color = "#ffffff"
     item_padding = 5
     # height+spacing+pixmaps should equals 108
-    item_height = 27
-    item_spacing = 81
+    item_height = 24
+    item_spacing = 84
 
 	item_pixmap_style = "item_*.png"
 	selected_item_pixmap_style = "selected_item_*.png"
 
-    icon_width  = 0
-    item_icon_space = 7
+    icon_width  = 1
+    icon_height = 1
+    item_icon_space = 5
 	scrollbar = true
 }
 

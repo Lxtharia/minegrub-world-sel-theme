@@ -12,7 +12,31 @@ terminal-height: "80%"
 terminal-box: "term_*.png"
 terminal-font: "Monocraft Regular 22"
 
+### PLAY BUTTON
++ boot_menu {
+	left = 50%-399
+	top = 10%
+	width = 798
+	height = 82%
 
+	item_font = "Minecraft Regular 30"
+	item_color = "#ffffff"
+    item_padding = 5
+    # height+spacing should equals 108
+    item_height = 96
+    item_spacing = 12
+
+    item_pixmap_style = "L2_item_*.png"
+    selected_item_pixmap_style = "L3_item_*.png"
+
+    icon_width = 1
+    icon_height = 1
+    item_icon_space = 2000  # Temp fix, draw with empty font instead
+
+	scrollbar = true
+}
+
+### Icon and Description (one file, see ./icons/)
 + boot_menu {
 	left = 50%-399
 	top = 10%
@@ -37,6 +61,7 @@ terminal-font: "Monocraft Regular 22"
 	scrollbar = true
 }
 
+### default image and item name
 + boot_menu {
 	left = 50%-399
 	top = 10%
@@ -56,11 +81,12 @@ terminal-font: "Monocraft Regular 22"
     icon_width  = 1
     icon_height = 1
     item_icon_space = 5
+
 	scrollbar = true
 }
 
 
-# TEXT 
+# TIMEOUT
 + label {
 	id = "__timeout__"
 	
@@ -75,7 +101,7 @@ terminal-font: "Monocraft Regular 22"
 	color = "white"
 }
 
-# SHADOW 
+# TIMEOUT SHADOW 
 + label {
 	id = "__timeout__"
 

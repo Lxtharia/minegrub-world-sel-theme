@@ -8,7 +8,7 @@ fn main() -> ril::Result<()> {
     let mut text2 = "Adventure Mode, No Cheats, Version: 1.18.2";
     let mut classname = "os";
     let mut world_icon="";
-    dbg!(&args);
+    //dbg!(&args);
 
     if args.len() > 2  {
         text1 = match args[1].as_str() { "" => text1, "-" => text1, t => t };
@@ -20,14 +20,14 @@ fn main() -> ril::Result<()> {
 
     
 
-    let font:Font = Font::from_bytes(include_bytes!("../assets/Monocraft.otf"), 30.0)?;
+    let font:Font = Font::from_bytes(include_bytes!("../assets/MinecraftRegular.otf"), 30.0)?;
     let gray = Rgba::new(128, 128, 128, 255);
     let width = 801;
     let height=96;
     let mut img = Image::new(width, height, Rgba::new(0,0,0,0));
 
-    let text1entity = TextSegment::new(&font, text1, gray).with_position(105, 36);
-    let text2entity = TextSegment::new(&font, text2, gray).with_position(105, 64);
+    let text1entity = TextSegment::new(&font, text1, gray).with_position(105, 33);
+    let text2entity = TextSegment::new(&font, text2, gray).with_position(105, 61);
 
     let icon= Image::<Rgba>::open(world_icon);
     match icon {
@@ -37,10 +37,10 @@ fn main() -> ril::Result<()> {
     img.draw(&text1entity);
     img.draw(&text2entity);
 
-    let filepath = format!("./minegrub-world-selection/icons/");
-    match img.save(ImageFormat::Png, filepath) {
-        Err(_) => { img.save(ImageFormat::Png, format!("{}.png", classname))?; },
-        _ => {},
+    let filepath = format!("./minegrub-world-selection/icons/{}.png", classname);
+    match img.save(ImageFormat::Png, &filepath) {
+        Err(_) => { img.save(ImageFormat::Png, format!("{}.png", classname))?; println!("Successfully saved to ./{}.png", classname);},
+        _ => {println!("Successfully saved to {}", &filepath);},
     }
     
     Ok(())
@@ -49,9 +49,9 @@ fn main() -> ril::Result<()> {
 
 
 fn help() {
-    let helpmsg = " Usage: icon-generator <first line> <second line> <distro name> [distro icon]
-    Have fun
-";
+    let helpmsg = r#" Usage: icon-generator <first line> <second line> <class name> [icon filepath]
+    > for default text use "-" or an empty string
+"#;
 
     println!("{}", helpmsg);
 }

@@ -8,23 +8,19 @@ fn main() -> ril::Result<()> {
 
 
     // Defaults
+    let mut classname = "os";
     let mut text1 = "Operating System (01/09/23 ?.?.??)";
     let mut text2 = "Adventure Mode, No Cheats, Version: 1.18.2";
-    let mut classname = "os";
-    let mut world_icon="";
+    let mut distro_icon="";
     let mut output_path = ".";
 
-    // Arguments
-    if args.len() > 2  {
-        text1 = match args[1].as_str() { "" => text1, "-" => text1, t => t };
-        text2 = match args[2].as_str() { "" => text2, "-" => text2, t => t };
-    }
-    if args.len() > 3  { classname = &args[3]; }
-    if args.len() > 4  { 
-        world_icon= match args[4].as_str() { "" => world_icon, "-" => world_icon, t => t };
-    }
+    // Arguments, very good code, yes yes
+    if args.len() > 1  { classname = &args[1]; }
+    if args.len() > 2  { text1 = match args[2].as_str() { "" => text1, "-" => text1, t => t }; }
+    if args.len() > 3  { text2 = match args[3].as_str() { "" => text2, "-" => text2, t => t }; }
+    if args.len() > 4  { distro_icon= match args[4].as_str() { "" => distro_icon, "-" => distro_icon, t => t }; }
     if args.len() > 5  { output_path = &args[5]; }
-    if args.len() > 6  || args.len() <=1 { help(); }
+    if args.len() > 6  || args.len() <=1 { help(); return Ok(()); }
 
     
     // Create font, color, text and image
@@ -38,9 +34,9 @@ fn main() -> ril::Result<()> {
     let text2entity = TextSegment::new(&font, text2, gray).with_position(105, 61);
 
     // Drawing
-    let icon= Image::<Rgba>::open(world_icon);
+    let icon= Image::<Rgba>::open(distro_icon);
     match icon {
-        Err(_) => println!("No icon path was given"),
+        Err(e) => {dbg!(e); println!("No icon found or no path given. Leaving empty.")},
         Ok(mut i) => { i.resize(96, 96, ResizeAlgorithm::Nearest); img.paste(0, 0, &i);},
     };
     img.draw(&text1entity);
@@ -63,5 +59,5 @@ fn help() {
     > for default options use "-" or an empty string
 "#;
 
-    println!("{}", helpmsg);
+    println!("\n{}", helpmsg);
 }

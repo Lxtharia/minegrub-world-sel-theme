@@ -4,7 +4,7 @@ dst="../minegrub-world-selection/icons/"
 
 ### We need something other than Version that doesn't get outdated
 # general classes
-$cmd  os 'Operating System (01/01/l970, 0:00 AM)'	'Adventure Mode, Unknown Version'   ''   $dst
+$cmd  os 'Operating System (01/01/1970, 0:00 AM)'	'Adventure Mode, Unknown Version'   ''   $dst
 $cmd  gnu-linux  'GNU/Linux (17/09/1991, 4:58 AM)'	'GNU Mode, Not Unix, Unknown Version'   ''   $dst
 # with minecraft logo
 src='./world-icons/'

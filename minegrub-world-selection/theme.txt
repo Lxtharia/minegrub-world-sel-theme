@@ -90,30 +90,30 @@ terminal-font: "Monocraft Regular 22"
 + label {
 	id = "__timeout__"
 	
-	left = 50%
-	top = 100%-31
-	height = 24
-	width = 50%-6	
+	left = 0
+	top = 60
+	height = 30
+	width = 100%	
 	
-	text = "Joining world in %d seconds"
-	align = "right"
+	text = "Joining World in %d Seconds"
+	align = "center"
 	font = "Minecraft Regular 30"
-	color = "white"
+	color = "#aaaaaa"
 }
 
 # TIMEOUT SHADOW 
 + label {
 	id = "__timeout__"
 
-	left = 50%+3
-	top = 100%-28
-	height = 24
-	width = 50%-6
+	left = 3
+	top = 63
+	height = 30
+	width = 100%
 
-	text = "Joining world in %d seconds"
-	align = "right"
+	text = "Joining World in %d Seconds"
+	align = "center"
 	font = "Minecraft Regular 30"
-	color = "#3f3f3f"
+	color = "#2A2A2A"
 }
 
 

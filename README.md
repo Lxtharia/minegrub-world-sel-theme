@@ -44,10 +44,10 @@ menuentry 'Arch Linux' --class arch --class gnu-linux --class gnu --class os $me
 
 ## Generating icons
 The icons should look like this:
-> [icons/arch.png](minegrub-world-selection/icons/arch.png)
-> 
-> ![icons/arch.png](minegrub-world-selection/icons/arch.png)
 
+![wtf](minegrub-world-selection/icons/arch.png)
+
+>[icons/arch.png](minegrub-world-selection/icons/arch.png)
 
 Because python would've been too simple, i wrote a rust app to generate icons like that
 ```

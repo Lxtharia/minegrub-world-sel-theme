@@ -36,7 +36,7 @@ fn main() -> ril::Result<()> {
     // Drawing
     let icon= Image::<Rgba>::open(distro_icon);
     match icon {
-        Err(e) => {dbg!(e); println!("No icon found or no path given. Leaving empty.")},
+        Err(_) => { println!("No icon found or no path given. Leaving empty."); },
         Ok(mut i) => {
             i.resize(64, 64, ResizeAlgorithm::Bilinear);
             i.resize(96, 96, ResizeAlgorithm::Nearest);

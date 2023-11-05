@@ -15,9 +15,9 @@ terminal-font: "Monocraft Regular 22"
 ### PLAY BUTTON
 + boot_menu {
 	left = 50%-399
-	top = 10%
+	top = 108
 	width = 798
-	height = 82%
+	height = 100%-324
 
 	item_font = "Minecraft Regular 30"
 	item_color = "#ffffff"
@@ -39,9 +39,9 @@ terminal-font: "Monocraft Regular 22"
 ### Icon and Description (one file, see ./icons/)
 + boot_menu {
 	left = 50%-399
-	top = 10%
+	top = 108
 	width = 798
-	height = 82%
+	height = 100%-324
 
 	item_font = "Minecraft Regular 30"
 	item_color = "#ffffff"
@@ -64,9 +64,9 @@ terminal-font: "Monocraft Regular 22"
 ### default image and item name
 + boot_menu {
 	left = 50%-399
-	top = 10%
+	top = 108
 	width = 798
-	height = 82%
+	height = 100%-324
 
 	item_font = "Minecraft Regular 30"
 	item_color = "#ffffff"

@@ -10,6 +10,8 @@ There are also *icons* now! Isn't that great? And even better, they also include
   ```
   git clone https://github.com/Lxtharia/minegrub-world-sel-theme.git
   ```
+- [Optional]: download the background matching your screen size from [here](https://github.com/Lxtharia/minegrub-world-sel-theme/tree/c2b188a982a9ab1c092ee275e1ad1a643427d581/background-sizes)
+  - And copy it to `minegrub-world-selection/background.png`
 - Copy the folder to your boot partition
   ```
   cd ./minegrub-world-sel-theme
@@ -23,12 +25,7 @@ There are also *icons* now! Isn't that great? And even better, they also include
   ```
   sudo grub-mkconfig -o /boot/grub/grub.cfg
   ```
-> ## EXTRA ICON EXTRA
-> If you want items like Uefi Settings to have an icon, you need to add `--class uefi`  to the menuentry line in `/boot/grub/grub.cfg`:
->
->  `menuentry "Uefi Settings" --class uefi ...`
->
-> In this case you can  even put it in `/etc/grub.d/30_uefi-firmware` so if you regenerate your grub.cfg it can't be overwritten anymore :>
+
 
 # Also interesting
 ## Icons
@@ -41,6 +38,13 @@ menuentry 'Arch Linux' --class arch --class gnu-linux --class gnu --class os $me
   ...
 }
 ```
+
+## Setting icons for entries like Uefi Settings
+> If you want items like Uefi Settings to have an icon, you need to add `--class uefi`  to the menuentry line in `/boot/grub/grub.cfg`:
+>
+>  `menuentry "Uefi Settings" --class uefi ...`
+>
+> In this case you can  even put it in `/etc/grub.d/30_uefi-firmware` so it doesn't get overwritten when you regenerate your grub.cfg :>
 
 ## Generating icons
 The icons should look like this:
@@ -67,6 +71,8 @@ Feel free to share and contribute! If only screenshot, or even text and the gene
 
 # Great
 - I like writing Readme but at the same time, it takes too long and it's never perfect
+- Everything feels like chaos
+- I spent too much time on this
 - Tell your grandparents and pets about this cool theme!
 - Put it on your laptop, put it on your smartwatch put it on your schools PCs (i won't take responsibility if you get expelled)
 - Install it on your mouse-with-screen, copy it to your flash drives

@@ -1,11 +1,12 @@
 #!/bin/bash
-cmd="cargo run " 
+cmd="cargo run "
 dst="../minegrub-world-selection/icons/"
 
 ### We need something other than Version that doesn't get outdated
 # general classes
 $cmd  os 'Operating System (01/01/1970, 0:00 AM)'	'Adventure Mode, Unknown Version'   ''   $dst
 $cmd  gnu-linux  'GNU/Linux (17/09/1991, 4:58 AM)'	'GNU Mode, Not Unix, Unknown Version'   ''   $dst
+
 # with minecraft logo
 src='./world-icons/'
 c=uefi		&& $cmd $c 'Uefi Settings (09/10/2006, 7:13 PM)'	'Configuration Mode, Version 2.10' $src$c.png $dst
@@ -16,6 +17,7 @@ c=bedrock	&& $cmd $c 'Bedrock Linux (03/08/2012, 1:34 PM)'		'Adventure Mode, Ver
 c=manjaro	&& $cmd $c 'Manjaro Linux (10/07/2011, 00:38 AM)' 		'Adventure Mode, Cheats, Version 23.0.0' $src$c.png $dst
 c=linuxmint	&& $cmd $c 'Linux Mint (08/27/2006, 6:11 AM)' 		'Adventure Mode, No Cheats, Version 21.3' $src$c.png $dst
 c=kali		&& $cmd $c 'Kali Linux (03/13/2013, 4:37 PM)' 'Adventure Mode, Cheats, Version 2023.4' $src$c.png $dst
+c=fedora	&& $cmd $c 'Fedora Linux (06/11/2003, 2:19 PM)'		'Survival Mode, No Cheats, Version: 39' $src$c.png $dst
 
 # no minecraft logo yet
 src='./distro-icons/distributor-logo-'

@@ -21,8 +21,8 @@ create_icon ()
         -background none \
         -extent 801x96 \
         -font ./MinecraftRegular.otf -pointsize 30 -fill "rgb(128,128,128)" \
-        -annotate +105+3  "$line_top" \
-        -annotate +105+31 "$line_bot" \
+        -annotate +105+0  "$line_top" \
+        -annotate +105+28 "$line_bot" \
         "$dstdir/$name.png"
 }
 
@@ -35,7 +35,7 @@ $cmd  os 'Operating System (01/01/1970, 0:00 AM)'	'Adventure Mode, Unknown Versi
 $cmd  gnu-linux  'GNU/Linux (17/09/1991, 4:58 AM)'	'GNU Mode, Not Unix, Unknown Version'   ''   $dst
 
 # with minecraft logo
-src='./world-icons/'
+src='./minecraft-world-icons/'
 c=uefi		&& $cmd $c 'Uefi Settings (09/10/2006, 7:13 PM)'	'Configuration Mode, Version 2.10' $src$c.png $dst
 c=windows	&& $cmd $c 'Microsoft Windows (15/07/2015, 6:19 AM)'		'Survival Mode, No Cheats, Version: 22H2' $src$c.png $dst
 c=arch		&& $cmd $c 'Arch Linux (11/02/2002, 2:24 AM)'		'Creative Mode, Cheats, Version: 2.5.1' $src$c.png $dst

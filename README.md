@@ -53,9 +53,10 @@ menuentry 'Arch Linux' --class arch --class gnu-linux --class gnu --class os $me
 >
 > In this case you can put it in `/etc/grub.d/30_uefi-firmware` so it doesn't get overwritten when you regenerate your grub.cfg :>
 
-## Generating/Contributing icons
 
-Read more [here](icon-generator/README.md)
+## [Generating/Contributing icons](icon-generator/README.md)
+
+Click to read more ^
 
 # Great
 

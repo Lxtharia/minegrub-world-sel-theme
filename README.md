@@ -27,10 +27,10 @@ There are also *icons* now! Isn't that great? And even better, they also include
   ```
 
 
-# Also interesting
-## Icons
-when a `menuentry` line in `grub.cfg` contains a `--class <classname>` option, grub will try to find `THEME_DIR/icons/<classname>.png` as the icon for that boot entry 
+# Icons
 
+GRUB can add icons to each entry, based on the `--class` properties of a `menuentry`.
+This theme makes use of this to have each entry have its own icon _and_ world description!
 **Example:**
 ```bash
 # grub will try to use /boot/grub/themes/minegrub-world-selection/icons/arch.png as the icon and falls back on  gnu-linux.png,  gnu.png  and  os.png
@@ -40,36 +40,19 @@ menuentry 'Arch Linux' --class arch --class gnu-linux --class gnu --class os $me
 ```
 
 ## Setting icons for entries like Uefi Settings
-> If you want items like Uefi Settings to have an icon, you need to add `--class uefi`  to the menuentry line in `/boot/grub/grub.cfg`:
+
+> If you want items like Uefi Settings to have an icon, you need to add `--class uefi` manually to the menuentry line in `/boot/grub/grub.cfg`:
 >
 >  `menuentry "Uefi Settings" --class uefi ...`
 >
-> In this case you can  even put it in `/etc/grub.d/30_uefi-firmware` so it doesn't get overwritten when you regenerate your grub.cfg :>
+> In this case you can put it in `/etc/grub.d/30_uefi-firmware` so it doesn't get overwritten when you regenerate your grub.cfg :>
 
-## Generating icons
-The icons should look like this:
+## Generating/Contributing icons
 
-![wtf](minegrub-world-selection/icons/arch.png)
-
->[icons/arch.png](minegrub-world-selection/icons/arch.png)
-
-Because python would've been too simple, i wrote a rust app to generate icons like that
-```
-Usage: cargo run <class name> <first line> <second line> [world icon filepath] [output_dir]
-                |-> for default options use "-" or an empty string
-```
-and a bash script to generate multiple of them easily.
-
-## Creating and contributing icons!
-I think it's fun to have the distro icons look like Minecraft world thumbnails!
-
-If you want to make one, go for it! Create a world and build, take a screenshot, make it square and put it in `icon-generator/world-icons/<classname>.png` (You can also position yourself, exit the world, reset the icon, enter the world, don't move and wait for a minute, leave the world, open the worlds folder and use the icon.png for more authentic image quality)
-Then just add another line to `gen_icons.sh`, generate it (into `minegrub-world-selection/icons/`) and copy the theme folder into `/boot/grub/themes/` again.
-
-Feel free to share and contribute! If only screenshot, or even text and the generated product, all welcome! 
-(only the generated <classname>.png would be a bit annoying tho if you want to adjust the text, but for colored text you can use the IconTemplate.afphoto (maybe I will export it as a psd as well sometime))
+Read more [here](icon-generator/README.md)
 
 # Great
+
 - I like writing Readme but at the same time, it takes too long and it's never perfect
 - Everything feels like chaos
 - I spent too much time on this
@@ -81,3 +64,4 @@ Feel free to share and contribute! If only screenshot, or even text and the gene
 - Maybe it eats your food, maybe it doesn't
 - Thank you internet for wisdom and funny youtube clips that kept me motivated on my journey
 - **Go check out the other Minegrub: [Minegrub Theme](https://github.com/Lxtharia/minegrub-theme)**
+

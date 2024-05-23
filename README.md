@@ -1,4 +1,10 @@
+**The Minecraft Grub Theme Trio:**
+
+| [Minecraft Main Menu](https://github.com/Lxtharia/minegrub-theme) | *>Minecraft World Selection Menu<* | [Using both themes together](https://github.com/Lxtharia/double-minegrub-menu) |
+| --- | --- | --- |
+
 # Minecraft World Selection Grub Theme
+
 Wowie, another Minecraft grub theme! But this time it's in the style of the singleplayer world selection menu, which makes a little more sense than selecting your operating system from the main menu.
 There are also *icons* now! Isn't that great? And even better, they also include the descriptive text below each boot option!
 

@@ -1,5 +1,32 @@
 #!/bin/bash
-cmd="cargo run "
+
+
+create_icon ()
+{
+    name=$1; line_top=$2; line_bot=$3; srcimg=$4; dstdir=$5;
+    if [ -z "$srcimg" ]; then
+      convert -size 96x96 xc:none empty_image.png
+      srcimg="empty_image.png"
+    fi
+
+    echo ">>> Creating icon for '$name':
+    Using image: '$srcimg'
+    and text:    '$line_top | $line_bot'
+    Saving to    '$dstdir'"
+    convert "$srcimg" \
+        -resize 64x64 \
+        -filter point \
+        -resize 96x96 \
+        -gravity west \
+        -background none \
+        -extent 801x96 \
+        -font ./MinecraftRegular.otf -pointsize 30 -fill "rgb(128,128,128)" \
+        -annotate +105+3  "$line_top" \
+        -annotate +105+31 "$line_bot" \
+        "$dstdir/$name.png"
+}
+
+cmd="create_icon "
 dst="../minegrub-world-selection/icons/"
 
 ### We need something other than Version that doesn't get outdated

@@ -48,7 +48,7 @@
                   if [ ! -f "$iconFile" ]; then
                     iconFile="distro-icons/distributor-logo-$imgName.png"
 
-                    # Premade icon not found.. default to empty image
+                    # Generic distribution icon not found.. default to empty image
                     if [ ! -f "$iconFile" ]; then
                       iconFile="./empty_image.png"
                     fi

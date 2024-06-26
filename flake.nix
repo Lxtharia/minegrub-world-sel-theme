@@ -45,11 +45,11 @@
                   iconFile="minecraft-world-icons/$imgName.png"
 
                   # If no premade icon exists, use generic logo
-                  if [ ! -f "$iconFile" ]; then
+                  if [ ! -e "$iconFile" ]; then
                     iconFile="distro-icons/distributor-logo-$imgName.png"
 
                     # Generic distribution icon not found.. default to empty image
-                    if [ ! -f "$iconFile" ]; then
+                    if [ ! -e "$iconFile" ]; then
                       iconFile="./empty_image.png"
                     fi
                   fi

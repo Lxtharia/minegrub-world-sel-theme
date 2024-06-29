@@ -32,6 +32,53 @@ There are also *icons* now! Isn't that great? And even better, they also include
   sudo grub-mkconfig -o /boot/grub/grub.cfg
   ```
 
+### NixOS flake
+
+<details>
+<summary>Minimal example</summary>
+
+```nix
+# flake.nix
+{
+  inputs.minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
+  # ...
+
+  outputs = {nixpkgs, ...} @ inputs: {
+    nixosConfigurations.HOSTNAME = nixpkgs.lib.nixosSystem {
+      modules = [
+        ./configuration.nix
+        inputs.minegrub-world-sel-theme.nixosModules.default
+      ];
+    };
+  }
+}
+
+# configuration.nix
+{ pkgs, ... }: {
+
+  boot.loader.grub = {
+    minegrub-world-sel = {
+      enable = true;
+      customIcons = [{
+        name = "nixos";
+        lineTop = "NixOS (23/11/2023, 23:03)";
+        lineBottom = "Survival Mode, No Cheats, Version: 23.11";
+        # Icon: you can use an icon from the remote repo, or load from a local file
+        imgName = "nixos";
+        # customImg = builtins.path {
+        #   path = ./nixos-logo.png;
+        #   name = "nixos-img";
+        # };
+      }];
+    };
+  };
+
+}
+```
+</details>
+
+
+
 
 # Icons
 

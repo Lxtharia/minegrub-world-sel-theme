@@ -5,7 +5,7 @@ create_icon ()
 {
     name=$1; line_top=$2; line_bot=$3; srcimg=$4; dstdir=$5;
     if [ -z "$srcimg" ]; then
-      convert -size 96x96 xc:none empty_image.png
+      magick -size 96x96 xc:none empty_image.png
       srcimg="empty_image.png"
     fi
 
@@ -13,7 +13,7 @@ create_icon ()
     Using image: '$srcimg'
     and text:    '$line_top | $line_bot'
     Saving to    '$dstdir'"
-    convert "$srcimg" \
+    magick "$srcimg" \
         -resize 64x64 \
         -filter point \
         -resize 96x96 \

@@ -45,7 +45,7 @@ c=manjaro	&& $cmd $c 'Manjaro Linux (10/07/2011, 00:38 AM)' 		'Adventure Mode, C
 c=linuxmint	&& $cmd $c 'Linux Mint (08/27/2006, 6:11 AM)' 		'Adventure Mode, No Cheats, Version 21.3' $src$c.png $dst
 c=kali		&& $cmd $c 'Kali Linux (03/13/2013, 4:37 PM)' 'Adventure Mode, Cheats, Version 2023.4' $src$c.png $dst
 c=fedora	&& $cmd $c 'Fedora Linux (06/11/2003, 2:19 PM)'		'Survival Mode, No Cheats, Version: 39' $src$c.png $dst
-c=zorin     && $cmd $c 'Zorin OS (01/07/2009, 8:54 PM)' 'Survival Mode, Cheats, Version: 17.2' $src$c.png $dst
+c=zorin     && $cmd $c 'Zorin OS (01/07/2009, 8:54 PM)' 'Survival Mode, Cheats, Version: 17.1' $src$c.png $dst
 
 # no minecraft logo yet
 src='./distro-icons/distributor-logo-'

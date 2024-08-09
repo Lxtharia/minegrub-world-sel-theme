@@ -17,7 +17,7 @@ terminal-font: "Monocraft Regular 22"
 	left = 50%-399
 	top = 108
 	width = 798
-	height = 100%-324
+	height = 100%-300
 
 	item_font = "Minecraft Regular 30"
 	item_color = "#ffffff"
@@ -41,7 +41,7 @@ terminal-font: "Monocraft Regular 22"
 	left = 50%-399
 	top = 108
 	width = 798
-	height = 100%-324
+	height = 100%-300
 
 	item_font = "Minecraft Regular 30"
 	item_color = "#ffffff"
@@ -56,7 +56,7 @@ terminal-font: "Monocraft Regular 22"
 
     icon_width = 801
     icon_height = 96
-    item_icon_space = 1000  # Temp fix, draw with empty font instead
+    item_icon_space = 2000  # Temp fix, draw with empty font instead
 
 	scrollbar = true
 }
@@ -66,7 +66,7 @@ terminal-font: "Monocraft Regular 22"
 	left = 50%-399
 	top = 108
 	width = 798
-	height = 100%-324
+	height = 100%-300
 
 	item_font = "Minecraft Regular 30"
 	item_color = "#ffffff"

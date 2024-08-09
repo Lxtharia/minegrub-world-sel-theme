@@ -14,14 +14,14 @@ terminal-font: "Monocraft Regular 22"
 
 ### PLAY BUTTON
 + boot_menu {
-	left = 50%-399
-	top = 108
-	width = 798
-	height = 100%-300
+	left = 50%-410
+	top = 97
+	width = 809
+	height = 100%-289
 
 	item_font = "Minecraft Regular 30"
 	item_color = "#ffffff"
-    item_padding = 5
+    item_padding = 16
     # height+spacing should equals 108
     item_height = 96
     item_spacing = 12
@@ -32,20 +32,18 @@ terminal-font: "Monocraft Regular 22"
     icon_width = 1
     icon_height = 1
     item_icon_space = 2000  # Temp fix, draw with empty font instead
-
-	scrollbar = true
 }
 
 ### Icon and Description (one file, see ./icons/)
 + boot_menu {
-	left = 50%-399
-	top = 108
-	width = 798
-	height = 100%-300
+	left = 50%-410
+	top = 97
+	width = 809
+	height = 100%-289
 
 	item_font = "Minecraft Regular 30"
 	item_color = "#ffffff"
-    item_padding = 5
+    item_padding = 16
     # height+spacing should equals 108
     # Info: pixmaps are drawn in spacing, which may fuck with where the text is drawn
     # That's why i have empty pixmaps in left/top
@@ -57,20 +55,18 @@ terminal-font: "Monocraft Regular 22"
     icon_width = 801
     icon_height = 96
     item_icon_space = 2000  # Temp fix, draw with empty font instead
-
-	scrollbar = true
 }
 
 ### default image and item name
 + boot_menu {
-	left = 50%-399
-	top = 108
-	width = 798
-	height = 100%-300
+	left = 50%-410
+	top = 97
+	width = 809
+	height = 100%-289
 
 	item_font = "Minecraft Regular 30"
 	item_color = "#ffffff"
-    item_padding = 5
+    item_padding = 16
     # height+spacing+pixmaps should equals 108
     item_height = 24
     item_spacing = 84
@@ -82,7 +78,13 @@ terminal-font: "Monocraft Regular 22"
     icon_height = 1
     item_icon_space = 5
 
+    # Invisible border for the menu, so the scrollbar is shown
+    menu_pixmap_style = menu_*.png
+
 	scrollbar = true
+    scrollbar_width = 12
+    scrollbar_thumb = "scrollbar_thumb_*.png"
+    scrollbar_frame = "scrollbar_frame_*.png"
 }
 
 

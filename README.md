@@ -4,7 +4,7 @@
 | --- | --- | --- |
 
 **Also check out these other projects:**
-| [Minecraft SDDM Theme](https://github.com/Davi-S/sddm-theme-minesddm) | [Minecraft Plymouth Theme](https://github.com/nikp123/minecraft-plymouth-theme) |
+| [Minecraft SDDM Theme](https://github.com/Davi-S/sddm-theme-minesddm) by Davi-S | [Minecraft Plymouth Theme](https://github.com/nikp123/minecraft-plymouth-theme) by nikp123 |
 | --- | --- |
 
 # Minecraft World Selection Grub Theme

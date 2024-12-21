@@ -47,6 +47,7 @@ c=kali		&& $cmd $c 'Kali Linux (03/13/2013, 4:37 PM)' 'Adventure Mode, Cheats, V
 c=fedora	&& $cmd $c 'Fedora Linux (06/11/2003, 2:19 PM)'		'Survival Mode, No Cheats, Version: 39' $src$c.png $dst
 c=zorin     && $cmd $c 'Zorin OS (01/07/2009, 8:54 PM)' 'Survival Mode, Cheats, Version: 17.1' $src$c.png $dst
 c=nobara && $cmd $c 'Nobara Linux (07/10/2022, 9:11 AM)' 'Creative Mode, Cheats, Version: 40' $src$c.png $dst
+c=nixos && $cmd $c 'Nix OS (03/06/2022, 3:34 AM)' 'Spectator Mode, No Cheats, Version: 24.11' $src$c.png $dst
 
 # no minecraft logo yet
 src='./distro-icons/distributor-logo-'

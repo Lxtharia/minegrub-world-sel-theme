@@ -14,6 +14,8 @@ create_icon ()
     and text:    '$line_top | $line_bot'
     Saving to    '$dstdir'"
     magick "$srcimg" \
+        -gravity center \
+        -crop 1:1 +repage \
         -resize 64x64 \
         -filter point \
         -resize 96x96 \
@@ -46,8 +48,9 @@ c=linuxmint	&& $cmd $c 'Linux Mint (08/27/2006, 6:11 AM)' 		'Adventure Mode, No 
 c=kali		&& $cmd $c 'Kali Linux (03/13/2013, 4:37 PM)' 'Adventure Mode, Cheats, Version 2023.4' $src$c.png $dst
 c=fedora	&& $cmd $c 'Fedora Linux (06/11/2003, 2:19 PM)'		'Survival Mode, No Cheats, Version: 39' $src$c.png $dst
 c=zorin     && $cmd $c 'Zorin OS (01/07/2009, 8:54 PM)' 'Survival Mode, Cheats, Version: 17.1' $src$c.png $dst
-c=nobara && $cmd $c 'Nobara Linux (07/10/2022, 9:11 AM)' 'Creative Mode, Cheats, Version: 40' $src$c.png $dst
-c=nixos && $cmd $c 'Nix OS (03/06/2022, 3:34 AM)' 'Spectator Mode, No Cheats, Version: 24.11' $src$c.png $dst
+c=nobara    && $cmd $c 'Nobara Linux (07/10/2022, 9:11 AM)' 'Creative Mode, Cheats, Version: 40' $src$c.png $dst
+c=nixos     && $cmd $c 'Nix OS (03/06/2022, 3:34 AM)' 'Spectator Mode, No Cheats, Version: 24.11' $src$c.png $dst
+c=artix     && $cmd $c 'Artix Linux (08/08/2017, 5:18 AM)' 'Creative Mode, No Cheats, Version: 5.6.1' $src$c.png $dst
 
 # no minecraft logo yet
 src='./distro-icons/distributor-logo-'

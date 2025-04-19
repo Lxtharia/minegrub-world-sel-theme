@@ -51,6 +51,7 @@ c=zorin     && $cmd $c 'Zorin OS (01/07/2009, 8:54 PM)' 'Survival Mode, Cheats, 
 c=nobara    && $cmd $c 'Nobara Linux (07/10/2022, 9:11 AM)' 'Creative Mode, Cheats, Version: 40' $src$c.png $dst
 c=nixos     && $cmd $c 'Nix OS (03/06/2022, 3:34 AM)' 'Spectator Mode, No Cheats, Version: 24.11' $src$c.png $dst
 c=artix     && $cmd $c 'Artix Linux (08/08/2017, 5:18 AM)' 'Creative Mode, No Cheats, Version: 5.6.1' $src$c.png $dst
+c=cachyos   && $cmd $c 'CachyOS (30/12/2022, 12:00 AM)'		'Creative Mode, Cheats, Version: 6.13.7' $src$c.png $dst
 
 # no minecraft logo yet
 src='./distro-icons/distributor-logo-'

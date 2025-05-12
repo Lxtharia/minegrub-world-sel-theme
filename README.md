@@ -22,19 +22,33 @@ There are also *icons* now! Isn't that great? And even better, they also include
   ```
 - [Optional]: download the background matching your screen size from [here](https://github.com/Lxtharia/minegrub-world-sel-theme/tree/c2b188a982a9ab1c092ee275e1ad1a643427d581/background-sizes)
   - And copy it to `minegrub-world-selection/background.png`
-- Copy the folder to your boot partition
+- Enter the cloned repository
   ```
   cd ./minegrub-world-sel-theme
-  sudo cp -ruv ./minegrub-world-selection /boot/grub/themes/
   ```
-- Change/add this line in your `/etc/default/grub`:
+- Copy the folder to your boot partition
+  - For Ubuntu:
+    ```
+    sudo cp -ruv ./minegrub-world-selection /boot/grub/themes/
+    ```
+  - For Fedora:
+    ```
+    sudo cp -ruv ./minegrub-world-selection /boot/grub2/themes/
+    ```
+- Change/add these line in your `/etc/default/grub`:
   ```
+  GRUB_TERMINAL_OUTPUT=gfxterm
   GRUB_THEME=/boot/grub/themes/minegrub-world-selection/theme.txt
   ```
-- Update your live grub config by running
-  ```
-  sudo grub-mkconfig -o /boot/grub/grub.cfg
-  ```
+- Update your live grub config
+  - For Ubuntu:
+    ```
+    sudo grub-mkconfig -o /boot/grub/grub.cfg
+    ```
+  - For Fedora:
+    ```
+    sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+    ```
 
 ### NixOS flake
 

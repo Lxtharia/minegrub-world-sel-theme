@@ -27,25 +27,22 @@ There are also *icons* now! Isn't that great? And even better, they also include
   cd ./minegrub-world-sel-theme
   ```
 - Copy the folder to your boot partition
-  - For Ubuntu:
-    ```
-    sudo cp -ruv ./minegrub-world-selection /boot/grub/themes/
-    ```
-  - For Fedora:
-    ```
-    sudo cp -ruv ./minegrub-world-selection /boot/grub2/themes/
-    ```
+  > **NOTE**: 
+  > On some distros (like fedora) the path is `/boot/grub2/...` instead of `/boot/grub/...` so you might need to adjust the commands for that
+  ```
+  sudo cp -ruv ./minegrub-world-selection /boot/grub/themes/
+  ```
 - Change/add these line in your `/etc/default/grub`:
   ```
   GRUB_TERMINAL_OUTPUT=gfxterm
   GRUB_THEME=/boot/grub/themes/minegrub-world-selection/theme.txt
   ```
 - Update your live grub config
-  - For Ubuntu:
-    ```
+  - Run this command:
+     ```
     sudo grub-mkconfig -o /boot/grub/grub.cfg
     ```
-  - For Fedora:
+  - Or this on Fedora:
     ```
     sudo grub2-mkconfig -o /boot/grub2/grub.cfg
     ```

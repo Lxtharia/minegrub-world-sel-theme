@@ -20,7 +20,7 @@ There are also *icons* now! Isn't that great? And even better, they also include
   ```
   git clone https://github.com/Lxtharia/minegrub-world-sel-theme.git
   ```
-- [Optional]: download the background matching your screen size from [here](https://github.com/Lxtharia/minegrub-world-sel-theme/tree/c2b188a982a9ab1c092ee275e1ad1a643427d581/background-sizes)
+- [Optional]: Choose the background matching your screen size from `assets/background-scaled/...`
   - And copy it to `minegrub-world-selection/background.png`
 - Enter the cloned repository
   ```

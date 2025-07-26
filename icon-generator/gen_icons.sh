@@ -63,6 +63,7 @@ c=artix     && $cmd $c 'Artix Linux (08/08/2017, 5:18 AM)' 'Creative Mode, No Ch
 c=cachyos   && $cmd $c 'CachyOS (30/12/2022, 12:00 AM)'		'Creative Mode, Cheats, Version: 6.13.7' $src$c.png $dst
 c=ubuntu	&& $cmd $c 'Ubuntu OS (31/05/2025, 7:45 PM)'    'Survival Mode, No Cheats, Version: 24.04 LTS' $src$c.png $dst
 c=gentoo	&& $cmd $c 'Gentoo Linux (04/10/2025, 4:08 PM)'    'Creative Mode, Cheats, Version: 2025-07-06' $src$c.png $dst
+c=aosc      && $cmd $c 'AOSC OS (15/11/2011, 09:51 PM)'     'Survival Mode, Cheats, Version: 12.2.1' $src$c.png $dst
 
 # no minecraft logo yet
 src='./distro-icons/distributor-logo-'

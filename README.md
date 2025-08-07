@@ -16,6 +16,21 @@ There are also *icons* now! Isn't that great? And even better, they also include
 
 # Installation
 
+## AUR
+
+This package is available on the AUR! You can view the package [here][aur].
+
+To install, simply do something like the following:
+
+```bash
+yay grub-theme-minegrub-world-selection-git
+```
+
+Or, clone the AUR git repo locally (containing the `PKGBUILD` and such), and run `makepkg -cris`.
+
+
+## Manual (linux)
+
 - Clone this repository
   ```
   git clone https://github.com/Lxtharia/minegrub-world-sel-theme.git
@@ -47,7 +62,7 @@ There are also *icons* now! Isn't that great? And even better, they also include
     sudo grub2-mkconfig -o /boot/grub2/grub.cfg
     ```
 
-### NixOS flake
+## NixOS flake
 
 <details>
 <summary>Minimal example</summary>
@@ -134,3 +149,6 @@ Click to read more ^
 - Thank you internet for wisdom and funny youtube clips that kept me motivated on my journey
 - **Go check out the other Minegrub: [Minegrub Theme](https://github.com/Lxtharia/minegrub-theme)**
 
+
+
+  [aur]:https://aur.archlinux.org/packages/grub-theme-minegrub-world-selection-git

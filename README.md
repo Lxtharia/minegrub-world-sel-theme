@@ -23,7 +23,7 @@ This package is available on the AUR! You can view the package [here][aur].
 To install, simply do something like the following:
 
 ```bash
-yay grub-theme-minegrub-world-selection-git
+yay -S grub-theme-minegrub-world-selection-git
 ```
 
 Or, clone the AUR git repo locally (containing the `PKGBUILD` and such), and run `makepkg -cris`.

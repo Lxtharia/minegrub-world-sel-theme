@@ -13,7 +13,7 @@ create_icon ()
 {
     name=$1; line_top=$2; line_bot=$3; srcimg=$4; dstdir=$5;
     if [ -z "$srcimg" ]; then
-      $magick_cmd -size 96x96 xc:none empty_image.png
+      # $magick_cmd -size 96x96 xc:none empty_image.png
       srcimg="empty_image.png"
     fi
 
@@ -33,6 +33,7 @@ create_icon ()
         -font ./MinecraftRegular.otf -pointsize 30 -fill "rgb(128,128,128)" \
         -annotate +105+0  "$line_top" \
         -annotate +105+28 "$line_bot" \
+        -define png:color-type=6 \
         "$dstdir/$name.png"
 }
 

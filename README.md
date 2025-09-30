@@ -84,7 +84,7 @@ Or, clone the AUR git repo locally (containing the `PKGBUILD` and such), and run
 }
 
 # configuration.nix
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
 
   boot.loader.grub = {
     minegrub-world-sel = {

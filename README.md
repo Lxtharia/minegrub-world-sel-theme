@@ -71,9 +71,9 @@ Or, clone the AUR git repo locally (containing the `PKGBUILD` and such), and run
 {
   inputs.minegrub-world-sel-theme = {
     url = "github:Lxtharia/minegrub-world-sel-theme";
-    inputs.nixpkgs.follows = "base/nixpkgs";
+    inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = {nixpkgs, ...} @ inputs: {
+  outputs = { nixpkgs, ... }@inputs: {
     nixosConfigurations.HOSTNAME = nixpkgs.lib.nixosSystem {
       modules = [
         ./configuration.nix

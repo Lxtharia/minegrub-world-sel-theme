@@ -66,13 +66,13 @@ Or, clone the AUR git repo locally (containing the `PKGBUILD` and such), and run
 
 <details>
 <summary>Minimal example</summary>
-
+### flake.nix
 ```nix
-# flake.nix
 {
-  inputs.minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
-  # ...
-
+  inputs.minegrub-world-sel-theme = {
+    url = "github:Lxtharia/minegrub-world-sel-theme";
+    inputs.nixpkgs.follows = "base/nixpkgs";
+  };
   outputs = {nixpkgs, ...} @ inputs: {
     nixosConfigurations.HOSTNAME = nixpkgs.lib.nixosSystem {
       modules = [
@@ -82,10 +82,10 @@ Or, clone the AUR git repo locally (containing the `PKGBUILD` and such), and run
     };
   }
 }
-
-# configuration.nix
+```
+### configuration.nix
+```nix
 { config, pkgs, ... }: {
-
   boot.loader.grub = {
     minegrub-world-sel = {
       enable = true;
@@ -104,7 +104,6 @@ Or, clone the AUR git repo locally (containing the `PKGBUILD` and such), and run
       ];
     };
   };
-
 }
 ```
 </details>

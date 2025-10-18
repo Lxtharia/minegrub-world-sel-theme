@@ -51,6 +51,7 @@ c=uefi		&& $cmd $c 'Uefi Settings (09/10/2006, 7:13 PM)'	'Configuration Mode, Ve
 c=windows	&& $cmd $c 'Microsoft Windows (05/10/2021, 10:11 AM)'		'Survival Mode, No Cheats, Version: 24H2' $src$c.png $dst
 c=windows10	&& $cmd $c 'Microsoft Windows (15/07/2015, 6:19 AM)'		'Survival Mode, No Cheats, Version: 22H2' $src$c.png $dst
 c=arch		&& $cmd $c 'Arch Linux (11/02/2002, 2:24 AM)'		'Creative Mode, Cheats, Version: 2.5.1' $src$c.png $dst
+c=bazzite   && $cmd $c 'Bazzite (13/10/2025, 8:42 PM)'		'Creative Mode, Cheats, Version: 1.21.10' $src$c.png $dst
 c=endeavouros	&& $cmd $c 'EndeavourOS Linux (15/07/2019, 05:30 AM)'           'Creative Mode, Cheats, Version: 3.4.1' $src$c.png $dst
 c=bedrock	&& $cmd $c 'Bedrock Linux (03/08/2012, 1:34 PM)'		'Adventure Mode, Version: 0.7-Poki' $src$c.png $dst
 c=manjaro	&& $cmd $c 'Manjaro Linux (10/07/2011, 00:38 AM)' 		'Adventure Mode, Cheats, Version 23.0.0' $src$c.png $dst

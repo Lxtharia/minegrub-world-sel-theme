@@ -49,7 +49,9 @@ $cmd  gnu-linux  'GNU/Linux (17/09/1991, 4:58 AM)'	'GNU Mode, Not Unix, Unknown 
 src='./minecraft-world-icons/'
 c=uefi		&& $cmd $c 'Uefi Settings (09/10/2006, 7:13 PM)'	'Configuration Mode, Version 2.10' $src$c.png $dst
 c=windows	&& $cmd $c 'Microsoft Windows (05/10/2021, 10:11 AM)'		'Survival Mode, No Cheats, Version: 24H2' $src$c.png $dst
-c=windows10	&& $cmd $c 'Microsoft Windows (15/07/2015, 6:19 AM)'		'Survival Mode, No Cheats, Version: 22H2' $src$c.png $dst
+c=windows7  && $cmd $c 'Microsoft Windows 7 (22/07/2009, 06:12 AM)'     'Survival Mode, No Cheats, Version: Ultimate' $src$c.png $dst
+c=windows10	&& $cmd $c 'Microsoft Windows 10 (15/07/2015, 6:19 AM)'		'Survival Mode, No Cheats, Version: 22H2' $src$c.png $dst
+c=windows11	&& $cmd $c 'Microsoft Windows 11 (15/07/2015, 6:19 AM)'		'Survival Mode, No Cheats, Version: 24H2' $src$c.png $dst
 c=arch		&& $cmd $c 'Arch Linux (11/02/2002, 2:24 AM)'		'Creative Mode, Cheats, Version: 2.5.1' $src$c.png $dst
 c=bazzite   && $cmd $c 'Bazzite (13/10/2025, 8:42 PM)'		'Creative Mode, Cheats, Version: 1.21.10' $src$c.png $dst
 c=endeavouros	&& $cmd $c 'EndeavourOS Linux (15/07/2019, 05:30 AM)'           'Creative Mode, Cheats, Version: 3.4.1' $src$c.png $dst
@@ -66,8 +68,13 @@ c=cachyos   && $cmd $c 'CachyOS (30/12/2022, 12:00 AM)'		'Creative Mode, Cheats,
 c=ubuntu	&& $cmd $c 'Ubuntu OS (31/05/2025, 7:45 PM)'    'Survival Mode, No Cheats, Version: 24.04 LTS' $src$c.png $dst
 c=gentoo	&& $cmd $c 'Gentoo Linux (04/10/2025, 4:08 PM)'    'Creative Mode, Cheats, Version: 2025-07-06' $src$c.png $dst
 c=aosc      && $cmd $c 'AOSC OS (15/11/2011, 09:51 PM)'     'Survival Mode, Cheats, Version: 12.2.1' $src$c.png $dst
+c=alt-linux && $cmd $c 'Alt Linux (01/02/2000, 6:21 PM)'    'Survival Mode, Cheats, Version: 10.4' $src$c.png $dst
+c=astra     && $cmd $c 'Astra Linux (01/01/2010, 03:19 AM)'     'Survival Mode, Cheats, Version: 1.8.1.6' $src$c.png $dst
+c=debian	&& $cmd $c 'Debian (16/08/1993, 5:33 PM)'		'Survival Mode, Cheats, Version: 12' $src$c.png $dst
+c=deepin    && $cmd $c 'Deepin Linux (16/08/2004, 08:11 AM)'     'Adventure Mode, No Cheats, Version: 25.0.1' $src$c.png $dst
+c=fedora    && $cmd $c 'Fedora Linux (06/11/2003, 02:19 PM)'     'Adventure Mode, No Cheats, Version: 42' $src$c.png $dst
+c=redos     && $cmd $c 'Red OS (01/02/2017, 04:30 PM)'     'Survival Mode, Cheats, Version: 7.3' $src$c.png $dst
 
 # no minecraft logo yet
 src='./distro-icons/distributor-logo-'
-c=debian	&& $cmd $c 'Debian (16/08/1993, 5:33 PM)'		'Survival Mode, Cheats, Version: 12' $src$c.png $dst
 

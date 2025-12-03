@@ -47,6 +47,7 @@ $cmd  gnu-linux  'GNU/Linux (17/09/1991, 4:58 AM)'	'GNU Mode, Not Unix, Unknown 
 
 # with minecraft logo
 src='./minecraft-world-icons/'
+c=submenu   && $cmd $c 'Select To Enter' ''   $src$c.png $dst
 c=uefi		&& $cmd $c 'Uefi Settings (09/10/2006, 7:13 PM)'	'Configuration Mode, Version 2.10' $src$c.png $dst
 c=windows	&& $cmd $c 'Microsoft Windows (05/10/2021, 10:11 AM)'		'Survival Mode, No Cheats, Version: 24H2' $src$c.png $dst
 c=windows7  && $cmd $c 'Microsoft Windows 7 (22/07/2009, 06:12 AM)'     'Survival Mode, No Cheats, Version: Ultimate' $src$c.png $dst

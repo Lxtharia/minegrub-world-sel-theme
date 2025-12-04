@@ -38,8 +38,8 @@ fi
 need_run_mkconfig=false
 
 echo
-read -p "[?] Apply patch to be able to set the grub-consoles background with GRUB_BACKGROUND? [y/N] " -e skip_patch
-if [[ "$skip_patch" =~ y|Y ]]; then
+read -p "[?] Apply patch to be able to set the grub-consoles background with GRUB_BACKGROUND? [y/N] " -e skip_patch_background
+if [[ "$skip_patch_background" =~ y|Y ]]; then
     need_run_mkconfig=true
     echo "[INFO] Editing /etc/grub.d/00_header"
     # Backing up that file, just in case
@@ -52,14 +52,14 @@ fi
 
 
 echo
-read -p "[?] Apply patch to show icon for the UEFI entry [y/N] " -e skip_patch
-if [[ "$skip_patch" =~ y|Y ]]; then
+read -p "[?] Apply patch to show icon for the UEFI entry [y/N] " -e skip_patch_uefi
+if [[ "$skip_patch_uefi" =~ y|Y ]]; then
     need_run_mkconfig=true
     echo "[INFO] Editing '/etc/grub.d/30_uefi-firmware'"
     # Backing up that file, just in case
     cp --no-clobber /etc/grub.d/30_uefi-firmware ./30_uefi-firmware.bak
     # sed'ing that one line
-    sed --in-place -E 's#(menuentry '\''\$LABEL'\'')(.*)$#\1 --class efi \2#' /etc/grub.d/30_uefi-firmware
+    sed --in-place -E '/--class uefi/!s#(menuentry '\''\$LABEL'\'')(.*)$#\1 --class uefi \2#' /etc/grub.d/30_uefi-firmware
 else
     echo "[INFO] [Skipping] Editing grub drop-in config-file"
 fi
@@ -68,11 +68,11 @@ echo
 read -p "[?] Apply patch to show icons for 'Advanced options' entry [y/N] " -e skip_patch
 if [[ "$skip_patch" =~ y|Y ]]; then
     need_run_mkconfig=true
-    echo "[INFO] Editing '/etc/grub.d/30_uefi-firmware'"
+    echo "[INFO] Editing '/etc/grub.d/10_linux'"
     # Backing up that file, just in case
     cp --no-clobber /etc/grub.d/10_linux ./10_linux.bak
     # sed'ing that one line
-    sed --in-place -E 's#(gettext_printf "Advanced options for %s" "\$\{OS\}" \| grub_quote\)'\'' )(.*)$#\1 --class submenu \2#' /etc/grub.d/10_linux
+    sed --in-place -E '/--class submenu/!s#(gettext_printf "Advanced options for %s" "\$\{OS\}" \| grub_quote\)'\'' )\s*(.*)$#\1 --class submenu \2#' /etc/grub.d/10_linux
 else
     echo "[INFO] [Skipping] Editing grub drop-in config-file"
 fi

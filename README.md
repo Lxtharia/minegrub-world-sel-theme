@@ -16,6 +16,19 @@ There are also *icons* now! Isn't that great? And even better, they also include
 
 # Installation
 
+## Installation Script
+- Clone this repository
+- Run the install script:
+  ```bash
+  git clone https://github.com/Lxtharia/minegrub-world-sel-theme.git && cd minegrub-world-sel-theme
+  sudo ./install_theme.sh
+  ```
+- The script asks you if you want to apply some patches. These include
+    - Patch to have the background of the console (pressing 'c') a dirt background
+    - Patch to add the UEFI logo to the UEFI boot entry
+    - Patch to add a logo for "Advanced options for ..."-submenus
+    - See [patches](#patches) section
+
 ## AUR
 
 This package is available on the AUR! You can view the package [here][aur].
@@ -109,6 +122,41 @@ Or, clone the AUR git repo locally (containing the `PKGBUILD` and such), and run
 </details>
 
 
+# Patches
+
+After you've applied the patches you need to run your `grub-mkconfig ...` command.
+You can also use the installation script to apply these.
+
+## Setting the icon for the UEFI boot entry
+
+If you want items like Uefi Settings to have an icon, you need to add `--class uefi` manually to the menuentry line in `/boot/grub/grub.cfg`:
+So you need to put it in `/etc/grub.d/30_uefi-firmware` so it doesn't get overwritten when you regenerate your grub.cfg :>
+ `menuentry "Uefi Settings" --class uefi ...`
+
+## Setting the icon for "Advanced options for..."-submenu
+Similar to the UEFI Boot entry, you need to change a line in `/etc/grub.d/10_linux`:
+```bash
+#                                                               Add this ---------vvvvvvvvvvvvvvv
+echo "submenu '$(gettext_printf "Advanced options for %s" "${OS}" | grub_quote)'  --class submenu \$menuentry_id_option 'gnulinux-advanced-$boot_device_id' {"
+```
+
+## Setting a background for the Console background
+The console background is black by default but can be set with `GRUB_BACKGROUND="path/to/bg.png"`.
+But this needs another patch to work:
+Change this line in `/etc/grub.d/00_header`
+```bash
+# ...
+    elif [ "x$GRUB_BACKGROUND" != x ] && [ -f "$GRUB_BACKGROUND" ] \
+#   ^^^^----- Change this to be
+#   vvvvvv--- this
+    fi; if [ "x$GRUB_BACKGROUND" != x ] && [ -f "$GRUB_BACKGROUND" ] \
+# ...
+```
+and set this line in `/etc/default/grub`
+```bash
+GRUB_BACKGROUND="/boot/grub/themes/minegrub-world-selection/dirt.png"
+```
+NOTE: This line should stand BEFORE `GRUB_THEME=...`.
 
 
 # Icons
@@ -123,18 +171,12 @@ menuentry 'Arch Linux' --class arch --class gnu-linux --class gnu --class os $me
 }
 ```
 
-## Setting icons for entries like Uefi Settings
-
-> If you want items like Uefi Settings to have an icon, you need to add `--class uefi` manually to the menuentry line in `/boot/grub/grub.cfg`:
->
->  `menuentry "Uefi Settings" --class uefi ...`
->
-> In this case you can put it in `/etc/grub.d/30_uefi-firmware` so it doesn't get overwritten when you regenerate your grub.cfg :>
-
 
 ## [Generating/Contributing icons](icon-generator/README.md)
 
-Click to read more ^
+If you notice that the icon for a distro is missing, then you're probably right!
+Then you should open Minecraft, build it, take a screenshot and contribute it to this repo!
+Click [here](icon-generator/README.md) to read more
 
 # Great
 
@@ -145,11 +187,7 @@ Click to read more ^
 - Put it on your laptop, put it on your smartwatch put it on your schools PCs (i won't take responsibility if you get expelled)
 - Install it on your mouse-with-screen, copy it to your flash drives
 - Btw, have I mentioned that I use arch?
-- I have a grand secret project that I may reveal soon
-- Maybe it eats your food, maybe it doesn't
 - Thank you internet for wisdom and funny youtube clips that kept me motivated on my journey
 - **Go check out the other Minegrub: [Minegrub Theme](https://github.com/Lxtharia/minegrub-theme)**
-
-
 
   [aur]:https://aur.archlinux.org/packages/grub-theme-minegrub-world-selection-git

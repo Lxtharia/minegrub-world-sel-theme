@@ -45,7 +45,8 @@ if [[ "$skip_patch_background" =~ y|Y ]]; then
     # Backing up that file, just in case
     cp --no-clobber /etc/grub.d/00_header ./00_header.bak
     # sed'ing that one line
-    sed --in-place -E 's/(.*)elif(.*"x\$GRUB_BACKGROUND" != x ] && [ -f "\$GRUB_BACKGROUND" ].*)/\1fi; if\2/' /etc/grub.d/00_header
+    sed --in-place -E 's/(.*)elif(.*"x\$GRUB_BACKGROUND" != x ] && [ -f "\$GRUB_BACKGROUND" ].*)/\1fi; if\2/' /etc/grub.d/00_header \
+        && bg_patch_applied=true
 else
     echo "[INFO] [Skipping] Editing grub drop-in-config file"
 fi
@@ -81,6 +82,9 @@ mkconfig_cmd=grub-mkconfig
 echo
 echo "======= Done! ======="
 echo "Make sure to add/change this line in /etc/default/grub ..."
+if [[ "$bg_patch_applied" == "true" ]] ; then
+    echo -e "    GRUB_BACKGROUND=$theme_path/dirt.png"
+fi
 echo -e "    GRUB_THEME=$theme_path/theme.txt"
 echo "...and run '$mkconfig_cmd -o $grub_path/grub.cfg'" 
 if [[ "$need_run_mkconfig" == "true" ]]; then

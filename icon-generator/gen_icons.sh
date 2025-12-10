@@ -47,7 +47,10 @@ $cmd  gnu-linux  'GNU/Linux (17/09/1991, 4:58 AM)'	'GNU Mode, Not Unix, Unknown 
 
 # with minecraft logo
 src='./minecraft-world-icons/'
-c=submenu   && $cmd $c 'Select To Enter' ''   $src$c.png $dst
+c=submenu   && $cmd $c 'Select To Enter'    ''   $src$c.png $dst
+c=shutdown  && $cmd $c 'Select To Shutdown' ''   $src$c.png $dst
+c=restart   && $cmd $c 'Select To Restart'  ''   $src$c.png $dst
+c=snapshot  && $cmd $c 'Snapshot (??/??/????, ??:?? AM)'    'Time travel Mode'   $src$c.png $dst
 c=uefi		&& $cmd $c 'Uefi Settings (09/10/2006, 7:13 PM)'	'Configuration Mode, Version 2.10' $src$c.png $dst
 c=windows	&& $cmd $c 'Microsoft Windows (05/10/2021, 10:11 AM)'		'Survival Mode, No Cheats, Version: 24H2' $src$c.png $dst
 c=windows7  && $cmd $c 'Microsoft Windows 7 (22/07/2009, 06:12 AM)'     'Survival Mode, No Cheats, Version: Ultimate' $src$c.png $dst
@@ -75,7 +78,7 @@ c=astra     && $cmd $c 'Astra Linux (01/01/2010, 03:19 AM)'     'Survival Mode, 
 c=debian	&& $cmd $c 'Debian (16/08/1993, 5:33 PM)'		'Survival Mode, Cheats, Version: 12' $src$c.png $dst
 c=deepin    && $cmd $c 'Deepin Linux (16/08/2004, 08:11 AM)'     'Adventure Mode, No Cheats, Version: 25.0.1' $src$c.png $dst
 c=fedora    && $cmd $c 'Fedora Linux (06/11/2003, 02:19 PM)'     'Adventure Mode, No Cheats, Version: 42' $src$c.png $dst
-c=redos     && $cmd $c 'Red OS (01/02/2017, 04:30 PM)'     'Survival Mode, Cheats, Version: 7.3' $src$c.png $dst
+c=opensuse  && $cmd $c 'OpenSUSE (17/03/1994, 08:03 AM)'     'Creative Mode, Cheats, Version: 16.0' $src$c.png $dst
 
 # no minecraft logo yet
 src='./distro-icons/distributor-logo-'

@@ -22,6 +22,7 @@ create_icon ()
     and text:    '$line_top | $line_bot'
     Saving to    '$dstdir'"
     $magick_cmd "$srcimg" \
+        -strip \
         -gravity center \
         -crop 1:1 +repage \
         -resize 64x64 \

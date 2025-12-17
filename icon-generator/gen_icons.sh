@@ -78,7 +78,7 @@ c=alt-linux && $cmd $c 'Alt Linux (01/02/2000, 6:21 PM)'    'Survival Mode, Chea
 c=astra     && $cmd $c 'Astra Linux (01/01/2010, 03:19 AM)'     'Survival Mode, Cheats, Version: 1.8.1.6' $src$c.png $dst
 c=debian	&& $cmd $c 'Debian (16/08/1993, 5:33 PM)'		'Survival Mode, Cheats, Version: 12' $src$c.png $dst
 c=deepin    && $cmd $c 'Deepin Linux (16/08/2004, 08:11 AM)'     'Adventure Mode, No Cheats, Version: 25.0.1' $src$c.png $dst
-c=fedora    && $cmd $c 'Fedora Linux (06/11/2003, 02:19 PM)'     'Adventure Mode, No Cheats, Version: 42' $src$c.png $dst
+c=fedora    && $cmd $c 'Fedora Linux (06/11/2003, 02:19 PM)'     'Adventure Mode, No Cheats, Version: 43' $src$c.png $dst
 c=opensuse  && $cmd $c 'OpenSUSE (17/03/1994, 08:03 AM)'     'Creative Mode, Cheats, Version: 16.0' $src$c.png $dst
 
 # no minecraft logo yet

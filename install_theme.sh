@@ -20,7 +20,7 @@ else
 	echo "Can't find a /boot/grub or /boot/grub2 folder. Exiting."
 	exit 
 fi
-theme_path="$grub_path/themes/minegrub-world-select"
+theme_path="$grub_path/themes/minegrub-world-selection"
 
 
 ## Prompts

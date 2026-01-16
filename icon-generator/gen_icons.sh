@@ -2,10 +2,11 @@
 
 magick_cmd=magick
 if ! $(which magick &> /dev/null) ; then
-    if $(which magick &> /dev/null) ; then
+    if $(which convert &> /dev/null) ; then
         magick_cmd=convert
     else
         echo "Neither found command 'magick' nor 'convert'. Make sure imagemagick is installed."
+        exit 1;
     fi
 fi
 

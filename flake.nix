@@ -16,7 +16,7 @@
             name = "minegrub-world-sel-theme";
             src = "${self}";
 
-            buildInputs = [ pkgs.jq pkgs.imagemagick ];
+            buildInputs = [ pkgs.jq pkgs.imagemagick pkgs.which ];
 
             installPhase = ''
               mkdir -p $out/grub/theme/

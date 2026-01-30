@@ -79,6 +79,7 @@ Or, clone the AUR git repo locally (containing the `PKGBUILD` and such), and run
 
 <details>
 <summary>Minimal example</summary>
+
 ### flake.nix
 ```nix
 {

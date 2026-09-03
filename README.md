@@ -103,6 +103,7 @@ Or, clone the AUR git repo locally (containing the `PKGBUILD` and such), and run
   boot.loader.grub = {
     minegrub-world-sel = {
       enable = true;
+      background = "assets/background-scaled/background-2560x1440.png"; # Path to background image (relative to theme source)
       customIcons = with config.system; [
         {
           inherit name;

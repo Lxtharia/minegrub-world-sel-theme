@@ -60,6 +60,15 @@
 
               done
 
+              BG_IMG_SRC="${self}/${cfg.background}"
+              if [ -f "$BG_IMG_SRC" ]; then
+                echo "Using background image: $BG_IMG_SRC"
+                cp -f "$BG_IMG_SRC" "../minegrub-world-selection/background.png"
+              else
+                echo "ERROR: $BG_IMG_SRC does not exist" >&2
+                exit 1
+              fi
+
               cp -r ../minegrub-world-selection/* $out/grub/theme/
             '';
           };
@@ -94,6 +103,12 @@
                   - imgName: Name of the icon to load from the minegrub repository. (from icon-generator folder)
                   - customImg: Path to a custom image file stored locally.
                 '';
+              };
+              background = mkOption {
+                type = types.str;
+                default = "assets/background-scaled/background-1920x1080.png";
+                example = "assets/background-scaled/background-2560x1440.png";
+                description = "Path to background image, relative to the theme source";
               };
             };
           };

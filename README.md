@@ -104,13 +104,18 @@ Or, clone the AUR git repo locally (containing the `PKGBUILD` and such), and run
     minegrub-world-sel = {
       enable = true;
       background = "assets/background-scaled/background-2560x1440.png"; # Path to background image (relative to theme source)
-      customIcons = with config.system; [
+      customIcons = with config.system.nixos; [
         {
-          inherit name;
-          lineTop = with nixos; distroName + " " + codeName + " (" + version + ")";
-          lineBottom = "Survival Mode, No Cheats, Version: " + nixos.release;
+          # run nix eval '<flake-path>#nixosConfigurations.<hostname>.config.system.nixos'
+          # to see others option
+
+          name = distroId;
+          lineTop = distroName + " " + codeName + " (" + version + ")";
+          lineBottom = "Survival Mode, No Cheats, Version: " + release;
+
           # Icon: you can use an icon from the remote repo, or load from a local file
           imgName = "nixos";
+
           # customImg = builtins.path {
           #   path = ./nixos-logo.png;
           #   name = "nixos-img";

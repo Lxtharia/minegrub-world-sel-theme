@@ -9,14 +9,6 @@ install:
 icons:
     cd icon-generator && ./gen_icons.sh
 
-# Build the Nix flake
-check:
-    nix flake check
-
-# Remove the installed theme (run mkconfig afterwards)
+# Remove the installed theme (then drop GRUB_THEME and regenerate grub.cfg)
 uninstall:
-    #!/usr/bin/env bash
-    set -eu
-    dir=$(ls -d /boot/grub*/themes/minegrub-world-selection)
-    sudo rm -rf "$dir"
-    echo "Removed $dir. Remove GRUB_THEME from /etc/default/grub and run grub-mkconfig."
+    sudo rm -rf /boot/grub*/themes/minegrub-world-selection

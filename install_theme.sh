@@ -6,6 +6,28 @@ if [[ `id -u` -ne 0 ]] ; then
 	exit
 fi 
 
+# Options: -y/--yes answers every prompt with its default (copy the theme, no patches, no grub-mkconfig)
+#          --patch-background, --patch-uefi, --patch-submenu apply the matching patch
+YES=false; FORCE_BG=false; FORCE_UEFI=false; FORCE_SUBMENU=false
+for arg in "$@"; do
+    case "$arg" in
+        -y|--yes) YES=true ;;
+        --patch-background) FORCE_BG=true ;;
+        --patch-uefi) FORCE_UEFI=true ;;
+        --patch-submenu) FORCE_SUBMENU=true ;;
+        *) echo "Usage: $0 [-y|--yes] [--patch-background] [--patch-uefi] [--patch-submenu]"; exit 1 ;;
+    esac
+done
+
+# ask "<prompt>" <default y|n> [force]; returns 0 for yes
+ask () {
+    [[ "$3" == true ]] && return 0
+    if [[ "$YES" == true ]]; then [[ "$2" == y ]]; return; fi
+    read -p "$1" -e answer
+    [[ -z "$answer" ]] && answer="$2"
+    [[ "$answer" =~ y|Y ]]
+}
+
 # this should be the directory of the clones repo
 SCRIPT_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 # I accidentally deleted the above line once and it copied / into the theme folder, so lets prevent this
@@ -27,8 +49,7 @@ theme_path="$grub_path/themes/minegrub-world-selection"
 
 ## Prompts
 
-read -p "[?] Copy/Update the theme to '$theme_path'? [Y/n] " -e copy_theme
-if [[ "$copy_theme" =~ y|Y || -z "$copy_theme" ]]; then
+if ask "[?] Copy/Update the theme to '$theme_path'? [Y/n] " y; then
     echo "[INFO] => Copying the theme files to boot partition:"
     # copy recursive, update, verbose
     mkdir -p "$theme_path"
@@ -40,8 +61,7 @@ fi
 need_run_mkconfig=false
 
 echo
-read -p "[?] Apply patch to be able to set the grub-consoles background with GRUB_BACKGROUND? [y/N] " -e apply_patch_background
-if [[ "$apply_patch_background" =~ y|Y ]]; then
+if ask "[?] Apply patch to be able to set the grub-consoles background with GRUB_BACKGROUND? [y/N] " n $FORCE_BG; then
     need_run_mkconfig=true
     echo "[INFO] Editing /etc/grub.d/00_header"
     # Backing up that file, just in case
@@ -61,8 +81,7 @@ fi
 
 
 echo
-read -p "[?] Apply patch to show icon for the UEFI entry [y/N] " -e apply_patch_uefi
-if [[ "$apply_patch_uefi" =~ y|Y ]]; then
+if ask "[?] Apply patch to show icon for the UEFI entry [y/N] " n $FORCE_UEFI; then
     need_run_mkconfig=true
     echo "[INFO] Editing '/etc/grub.d/30_uefi-firmware'"
     # Backing up that file, just in case
@@ -74,8 +93,7 @@ else
 fi
 
 echo
-read -p "[?] Apply patch to show icons for 'Advanced options' entry [y/N] " -e apply_patch
-if [[ "$apply_patch" =~ y|Y ]]; then
+if ask "[?] Apply patch to show icons for 'Advanced options' entry [y/N] " n $FORCE_SUBMENU; then
     need_run_mkconfig=true
     echo "[INFO] Editing '/etc/grub.d/10_linux'"
     # Backing up that file, just in case
@@ -117,16 +135,14 @@ if [[ "$need_run_mkconfig" == "true" ]]; then
     echo "| You need to run the following command:"
     echo "| > '$mkconfig_cmd -o $grub_path/grub.cfg'" 
     echo
-    read -p "[?] Run $mkconfig_cmd now? [Y/n] " -e mkconfig
-    if [[ "$mkconfig" =~ y|Y || -z "$mkconfig" ]]; then
+    if [[ "$YES" != true ]] && ask "[?] Run $mkconfig_cmd now? [Y/n] " y; then
         $mkconfig_cmd -o "$grub_path/grub.cfg"
     fi
 else
     echo "| and then run:"
     echo "| > '$mkconfig_cmd -o $grub_path/grub.cfg'" 
     echo
-    read -p "[?] Run $mkconfig_cmd now? [y/N] " -e mkconfig
-    if [[ "$mkconfig" =~ y|Y ]]; then
+    if [[ "$YES" != true ]] && ask "[?] Run $mkconfig_cmd now? [y/N] " n; then
         $mkconfig_cmd -o "$grub_path/grub.cfg"
     fi
 fi

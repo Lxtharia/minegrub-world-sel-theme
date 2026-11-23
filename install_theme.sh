@@ -135,14 +135,14 @@ if [[ "$need_run_mkconfig" == "true" ]]; then
     echo "| You need to run the following command:"
     echo "| > '$mkconfig_cmd -o $grub_path/grub.cfg'" 
     echo
-    if [[ "$YES" != true ]] && ask "[?] Run $mkconfig_cmd now? [Y/n] " y; then
+    if [[ "$YES" == true ]] || ask "[?] Run $mkconfig_cmd now? [Y/n] " y; then
         $mkconfig_cmd -o "$grub_path/grub.cfg"
     fi
 else
     echo "| and then run:"
     echo "| > '$mkconfig_cmd -o $grub_path/grub.cfg'" 
     echo
-    if [[ "$YES" != true ]] && ask "[?] Run $mkconfig_cmd now? [y/N] " n; then
+    if [[ "$YES" != true ]] || ask "[?] Run $mkconfig_cmd now? [y/N] " n; then
         $mkconfig_cmd -o "$grub_path/grub.cfg"
     fi
 fi

@@ -4,7 +4,10 @@ default:
 # Install the theme non-interactively and regenerate grub.cfg
 install:
     sudo ./install_theme.sh --yes
-    sudo sh -c 'if [ -d /boot/grub ]; then grub-mkconfig -o /boot/grub/grub.cfg; else grub2-mkconfig -o /boot/grub2/grub.cfg; fi'
+
+# Install the theme with all patches applied
+full-install:
+    sudo ./install_theme.sh --yes --patch-background --patch-uefi --patch-submenu
 
 # Regenerate icons into minegrub-world-selection/icons/
 icons:

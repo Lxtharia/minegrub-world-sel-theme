@@ -28,6 +28,13 @@ There are also *icons* now! Isn't that great? And even better, they also include
     - Patch to add the UEFI logo to the UEFI boot entry
     - Patch to add a logo for "Advanced options for ..."-submenus
     - See [patches](#patches) section
+- To skip the prompts, use the flags:
+    - `-y`, `--yes`: answer every prompt with its default (copies the theme, applies no patch, doesn't run `grub-mkconfig`)
+    - `--patch-background`, `--patch-uefi`, `--patch-submenu`: apply the matching patch
+    ```bash
+    sudo ./install_theme.sh --yes --patch-uefi
+    ```
+- With [just](https://github.com/casey/just) installed, `just install` installs the theme non-interactively and regenerates `grub.cfg`. `just uninstall` removes it again.
 
 ## AUR
 
